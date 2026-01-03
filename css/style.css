@@ -1,0 +1,542 @@
+/* 
+ * HobbyVerse Store - Main Stylesheet
+ * Theme: Hobby & Collectibles
+ */
+
+:root {
+  /* Color Palette */
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary-color: #22c55e;
+  --accent-color: #f59e0b;
+  --bg-light: #f8fafc;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --white: #ffffff;
+
+  /* Dark Mode Palette */
+  --dark-bg: #121212;
+  --dark-surface: #1e1e1e;
+  --dark-text: #e2e8f0;
+  --dark-border: #333333;
+
+  /* Spacing & Layout */
+  --border-radius: 0.5rem;
+  --transition-speed: 0.3s;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   1. GLOBAL STYLES
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+section {
+  padding: 4rem 0;
+}
+
+/* ==========================================================================
+   2. NAVBAR & HEADER
+   ========================================================================== */
+.navbar {
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem 0;
+  transition: background-color var(--transition-speed);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--primary-color) !important;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-dark) !important;
+  margin: 0 0.5rem;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width var(--transition-speed);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Navbar Toggler Customization */
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(15, 23, 42, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+body.dark-mode .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+.hero-section {
+  background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+  padding: 6rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   4. CARD COMPONENTS
+   ========================================================================== */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
+  overflow: hidden;
+  /* height: 100%; Removed to prevent layout issues in non-grid contexts */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  color: var(--text-light);
+}
+
+/* Product Badge */
+.badge {
+  padding: 0.5em 0.8em;
+  font-weight: 600;
+  border-radius: 2rem;
+}
+
+/* ==========================================================================
+   5. BUTTONS
+   ========================================================================== */
+.btn {
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-speed);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background-color: #16a34a;
+  border-color: #16a34a;
+  transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* ==========================================================================
+   6. FORMS
+   ========================================================================== */
+.form-control {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--border-radius);
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   7. GALLERY
+   ========================================================================== */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-speed);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay i {
+  color: var(--white);
+  font-size: 2rem;
+}
+
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+footer {
+  background-color: var(--text-dark);
+  color: #94a3b8;
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+}
+
+footer h5 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+footer a {
+  color: #94a3b8;
+}
+
+footer a:hover {
+  color: var(--white);
+}
+
+footer hr {
+  border-color: #334155;
+  margin: 2rem 0;
+}
+
+/* ==========================================================================
+   9. DARK MODE SUPPORT
+   ========================================================================== */
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+body.dark-mode .navbar {
+  background-color: var(--dark-surface);
+  box-shadow: 0 1px 0 var(--dark-border);
+}
+
+body.dark-mode .nav-link {
+  color: var(--dark-text) !important;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: var(--accent-color) !important;
+}
+
+body.dark-mode .nav-link::after {
+  background-color: var(--accent-color);
+}
+
+body.dark-mode .card {
+  background-color: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+}
+
+body.dark-mode .card-title,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--white);
+}
+
+body.dark-mode .card-text,
+body.dark-mode .text-muted {
+  color: #a0a0a0 !important;
+}
+
+body.dark-mode .hero-section {
+  background: linear-gradient(135deg, #1e1e1e 0%, #121212 100%);
+  border-bottom: 1px solid var(--dark-border);
+}
+
+body.dark-mode .form-control {
+  background-color: var(--dark-surface);
+  border-color: var(--dark-border);
+  color: var(--white);
+}
+
+body.dark-mode .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+body.dark-mode .form-label {
+  color: var(--dark-text);
+}
+
+body.dark-mode footer {
+  background-color: #000000;
+  border-top: 1px solid var(--dark-border);
+}
+
+/* Accordion Dark Mode */
+body.dark-mode .accordion-item {
+  background-color: var(--dark-surface);
+  border-color: var(--dark-border);
+}
+
+body.dark-mode .accordion-button {
+  background-color: var(--dark-surface);
+  color: var(--dark-text);
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+  background-color: #333;
+  color: var(--white);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+
+/* Dark Mode Utilities & Components Override */
+body.dark-mode .bg-light,
+body.dark-mode .bg-white {
+  background-color: var(--dark-surface) !important;
+  color: var(--dark-text) !important;
+}
+
+body.dark-mode .border {
+  border-color: var(--dark-border) !important;
+}
+
+/* Dark Mode Tabs */
+body.dark-mode .nav-tabs .nav-link {
+  color: var(--text-light);
+  border-color: transparent;
+}
+
+body.dark-mode .nav-tabs .nav-link:hover {
+  color: var(--white);
+  border-color: var(--dark-border);
+}
+
+body.dark-mode .nav-tabs .nav-link.active {
+  color: var(--white);
+  background-color: var(--dark-surface);
+  border-color: var(--dark-border) var(--dark-border) transparent;
+}
+
+body.dark-mode .tab-content {
+  border-color: var(--dark-border) !important;
+}
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  background-color: transparent;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #f1f5f9;
+  transform: scale(1.05);
+}
+
+.theme-toggle-btn:focus {
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Dark Mode Theme Toggle */
+body.dark-mode .theme-toggle-btn {
+  border-color: var(--dark-border);
+  color: var(--accent-color); /* Sun color */
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3); /* Glow effect */
+}
+
+/* Icon Rotation Animation */
+.rotate-icon i {
+  animation: spin 0.5s ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.8);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+/* Utility for smooth fade */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+}
