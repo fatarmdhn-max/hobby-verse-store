@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hubungi Kami - HobbyVerse Store</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">HobbyVerse Store</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Tentang Kami</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="products.html">Produk</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="categories.html">Kategori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="promo.html">Promo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Galeri</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contact.html">Kontak</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">FAQ</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="mt-5 pt-4">
+      <!-- Page Header -->
+      <section class="bg-light py-5 text-center">
+        <div class="container">
+          <h1 class="display-4 fw-bold">Hubungi Kami</h1>
+          <p class="lead text-muted">Kami siap membantu menjawab pertanyaan seputar hobi dan koleksi Anda.</p>
+        </div>
+      </section>
+
+      <!-- Contact Content Section -->
+      <section class="py-5">
+        <div class="container">
+          <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+              <h3 class="fw-bold mb-4">Kirim Pesan</h3>
+              <form id="contactForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="name" placeholder="Masukkan nama Anda" required />
+                    <div class="invalid-feedback">Mohon isi nama lengkap Anda.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="nama@email.com" required />
+                    <div class="invalid-feedback">Mohon isi alamat email yang valid.</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="subject" class="form-label">Subjek</label>
+                    <input type="text" class="form-control" id="subject" placeholder="Judul pesan Anda" required />
+                    <div class="invalid-feedback">Mohon isi subjek pesan.</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="message" class="form-label">Pesan</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Tuliskan pertanyaan atau pesan Anda di sini..." required></textarea>
+                    <div class="invalid-feedback">Mohon tuliskan pesan Anda.</div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary px-4">Kirim Pesan</button>
+                  </div>
+                </div>
+                <!-- Alert for feedback (hidden by default) -->
+                <div id="formAlert" class="alert alert-success mt-3 d-none" role="alert">Terima kasih! Pesan Anda telah kami terima. Kami akan segera menghubungi Anda.</div>
+              </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="col-lg-5">
+              <div class="p-4 bg-light rounded shadow-sm h-100">
+                <h3 class="fw-bold mb-4">Informasi Toko</h3>
+
+                <div class="d-flex mb-4">
+                  <div class="flex-shrink-0">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px">
+                      <i class="fas fa-map-marker-alt fa-lg"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h5 class="fw-bold">Alamat</h5>
+                    <p class="text-muted mb-0">Jl. Hobi Kolektor No. 123<br />Jakarta Selatan, DKI Jakarta 12345</p>
+                  </div>
+                </div>
+
+                <div class="d-flex mb-4">
+                  <div class="flex-shrink-0">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px">
+                      <i class="fas fa-envelope fa-lg"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h5 class="fw-bold">Email</h5>
+                    <p class="text-muted mb-0">info@hobbyversestore.com<br />support@hobbyversestore.com</p>
+                  </div>
+                </div>
+
+                <div class="d-flex mb-4">
+                  <div class="flex-shrink-0">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px">
+                      <i class="fas fa-phone-alt fa-lg"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h5 class="fw-bold">Telepon / WhatsApp</h5>
+                    <p class="text-muted mb-0">+62 812-3456-7890<br />(021) 123-4567</p>
+                  </div>
+                </div>
+
+                <div class="d-flex">
+                  <div class="flex-shrink-0">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px">
+                      <i class="fas fa-clock fa-lg"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h5 class="fw-bold">Jam Operasional</h5>
+                    <p class="text-muted mb-0">Senin - Jumat: 10:00 - 20:00<br />Sabtu - Minggu: 09:00 - 21:00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Placeholder Section -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h3 class="fw-bold text-center mb-4">Lokasi Kami</h3>
+          <div class="ratio ratio-21x9 rounded shadow-sm overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.4567365676985!2d106.83004867355626!3d-6.352919162148878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec6b07b68ea5%3A0x17da46bdf9308386!2sSTT%20Terpadu%20Nurul%20Fikri%20-%20Kampus%20B!5e1!3m2!1sid!2sid!4v1767368920264!5m2!1sid!2sid"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action Section -->
+      <section class="py-5 text-center">
+        <div class="container">
+          <h2 class="fw-bold mb-3">Ingin Melihat Koleksi Langsung?</h2>
+          <p class="lead text-muted mb-4">Kunjungi toko kami atau jelajahi katalog online kami sekarang.</p>
+          <a href="products.html" class="btn btn-primary btn-lg px-5">Lihat Produk</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <h5 class="text-uppercase mb-3">HobbyVerse Store</h5>
+            <p>Toko hobi terpercaya sejak 2010. Kami menyediakan berbagai macam koleksi mainan, model kit, dan memorabilia untuk para penggemar di seluruh Indonesia.</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5 class="text-uppercase mb-3">Tautan Cepat</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+              <li><a href="products.html" class="text-white-50 text-decoration-none">Produk</a></li>
+              <li><a href="about.html" class="text-white-50 text-decoration-none">Tentang Kami</a></li>
+              <li><a href="contact.html" class="text-white-50 text-decoration-none">Hubungi Kami</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5 class="text-uppercase mb-3">Ikuti Kami</h5>
+            <p>Dapatkan update terbaru tentang produk dan event kami.</p>
+            <div>
+              <a href="https://instagram.com" target="_blank" class="text-white me-3 text-decoration-none"><i class="fab fa-instagram fa-lg"></i> Instagram</a>
+              <a href="https://facebook.com" target="_blank" class="text-white text-decoration-none"><i class="fab fa-facebook fa-lg"></i> Facebook</a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4 bg-secondary" />
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy; 2023 HobbyVerse Store. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <p class="mb-0">Dibuat dengan <i class="fas fa-heart text-danger"></i> untuk Komunitas Hobi.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
